@@ -1,0 +1,88 @@
+$xcrun clang -g -O2 -std=c11 -Wall -framework ApplicationServices Desktop/grayscale.c -o Desktop/toggle-grayscale
+Desktop/grayscale.c:1:1: error: expected identifier or '('
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+^
+Desktop/grayscale.c:10:15: warning: multi-line // comment [-Wcomment]
+// grayscale.c\
+              ^
+Desktop/grayscale.c:11:19: warning: multi-line // comment [-Wcomment]
+#include <stdio.h>\
+                  ^
+Desktop/grayscale.c:12:53: warning: multi-line // comment [-Wcomment]
+#include <ApplicationServices/ApplicationServices.h>\
+                                                    ^
+Desktop/grayscale.c:14:47: warning: multi-line // comment [-Wcomment]
+CG_EXTERN bool CGDisplayUsesForceToGray(void);\
+                                              ^
+Desktop/grayscale.c:15:55: warning: multi-line // comment [-Wcomment]
+CG_EXTERN void CGDisplayForceToGray(bool forceToGray);\
+                                                      ^
+Desktop/grayscale.c:17:32: warning: multi-line // comment [-Wcomment]
+int main(int argc, char **argv)\
+                               ^
+Desktop/grayscale.c:18:3: warning: multi-line // comment [-Wcomment]
+\{\
+  ^
+Desktop/grayscale.c:19:21: warning: multi-line // comment [-Wcomment]
+    if (argc > 2) \{\
+                    ^
+Desktop/grayscale.c:20:132: warning: multi-line // comment [-Wcomment]
+  ...argument to toggle, or with arguments \\"on\\" or \\"off\\" to enable or disable.\\n");\
+                                                                                            ^
+Desktop/grayscale.c:21:18: warning: multi-line // comment [-Wcomment]
+        return 1;\
+                 ^
+Desktop/grayscale.c:22:7: warning: multi-line // comment [-Wcomment]
+    \}\
+      ^
+Desktop/grayscale.c:24:22: warning: multi-line // comment [-Wcomment]
+    if (argc == 2) \{\
+                     ^
+Desktop/grayscale.c:25:43: warning: multi-line // comment [-Wcomment]
+        if (0 == strcmp(argv[1], "on")) \{\
+                                          ^
+Desktop/grayscale.c:26:53: warning: multi-line // comment [-Wcomment]
+            printf("enabling grayscale mode...\\n");\
+                                                    ^
+Desktop/grayscale.c:27:40: warning: multi-line // comment [-Wcomment]
+            CGDisplayForceToGray(true);\
+                                       ^
+Desktop/grayscale.c:28:52: warning: multi-line // comment [-Wcomment]
+        \} else if (0 == strcmp(argv[1], "off")) \{\
+                                                   ^
+Desktop/grayscale.c:29:54: warning: multi-line // comment [-Wcomment]
+            printf("disabling grayscale mode...\\n");\
+                                                     ^
+Desktop/grayscale.c:30:41: warning: multi-line // comment [-Wcomment]
+            CGDisplayForceToGray(false);\
+                                        ^
+Desktop/grayscale.c:31:19: warning: multi-line // comment [-Wcomment]
+        \} else \{\
+                  ^
+Desktop/grayscale.c:32:59: warning: multi-line // comment [-Wcomment]
+            fprintf(stderr, "error: invalid argument\\n");\
+                                                          ^
+Desktop/grayscale.c:33:22: warning: multi-line // comment [-Wcomment]
+            return 1;\
+                     ^
+Desktop/grayscale.c:34:11: warning: multi-line // comment [-Wcomment]
+        \}\
+          ^
+Desktop/grayscale.c:35:15: warning: multi-line // comment [-Wcomment]
+    \} else \{\
+              ^
+Desktop/grayscale.c:36:49: warning: multi-line // comment [-Wcomment]
+        printf("toggling grayscale mode...\\n");\
+                                                ^
+Desktop/grayscale.c:37:59: warning: multi-line // comment [-Wcomment]
+        CGDisplayForceToGray(!CGDisplayUsesForceToGray());\
+                                                          ^
+Desktop/grayscale.c:38:7: warning: multi-line // comment [-Wcomment]
+    \}\
+      ^
+Desktop/grayscale.c:40:14: warning: multi-line // comment [-Wcomment]
+    return 0;\
+             ^
+27 warnings and 1 error generated.
+$toggle-grayscale
+-bash: toggle-grayscale: command not found
